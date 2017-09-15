@@ -3,9 +3,14 @@ module ProfileComponent
     include Schema::DataStructure
 
     attribute :id, String
-
-    # TODO Implement attributes
-    # TODO Implement entity logic, predicates, mutations, calculations, etc?
-    # Note: This class's methods should pertain to its attributes
+    attribute :name, String
+    attribute :email, String
+    attribute :avatar_url, String
+    attribute :github_id, String
+    attribute :initiated_time, Time
+    
+    def initiated?
+      !initiated_time.nil?
+    end
   end
 end
