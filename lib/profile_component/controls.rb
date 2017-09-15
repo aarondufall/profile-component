@@ -7,6 +7,6 @@ require 'profile_component/controls/version'
 
 require 'profile_component/controls/profile'
 
-# require 'profile_component/controls/commands/...'
+require 'profile_component/controls/commands/initiate'
 
-# require 'profile_component/controls/events/...'
+require 'profile_component/controls/events/initiated'

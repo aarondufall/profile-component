@@ -5,13 +5,33 @@ module ProfileComponent
         profile = ProfileComponent::Profile.build
 
         profile.id = self.id
-        profile.something_happened_time = Time::Effective::Raw.example
+        profile.name = name
+        profile.email = email
+        profile.avatar_url = avatar_url
+        profile.github_id = github_id
+        profile.initiated_time = Time::Effective::Raw.example
 
         profile
       end
 
       def self.id
         ID.example(increment: id_increment)
+      end
+
+      def self.name
+        'some name'
+      end
+
+      def self.email
+        'email@some_domain.com'
+      end
+
+      def self.avatar_url
+        'http://some_domain.com/images/some_avatar.jpg'
+      end
+
+      def self.github_id
+        'some_github_id'
       end
 
       def self.id_increment
@@ -21,6 +41,12 @@ module ProfileComponent
       module New
         def self.example
           ProfileComponent::Profile.build
+        end
+      end
+
+      module Initiated
+        def self.example
+          Profile.example
         end
       end
 

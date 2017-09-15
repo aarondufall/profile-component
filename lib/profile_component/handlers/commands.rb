@@ -19,26 +19,24 @@ module ProfileComponent
 
       category :profile
 
-      # TODO Implement command handler block
-      # eg:
-      # handle DoSomething do |do_something|
-      #   profile_id = do_something.profile_id
+      handle Initiate do |initiate|
+        profile_id = initiate.profile_id
 
-      #   profile, version = store.fetch(profile_id, include: :version)
+        profile = store.fetch(profile_id)
 
-      #   if profile.something_happened?
-      #     logger.info(tag: :ignored) { "Command ignored (Command: #{do_something.message_type}, Profile ID: #{profile_id})" }
-      #     return
-      #   end
+        if profile.initiated?
+          logger.info(tag: :ignored) { "Command ignored (Command: #{initiate.message_type}, Profile ID: #{profile_id})" }
+          return
+        end
 
-      #   something_happened = SomethingHappened.follow(do_something)
+        initiated = Initiated.follow(initiate)
 
-      #   something_happened.processed_time = clock.iso8601
+        initiated.processed_time = clock.iso8601
 
-      #   stream_name = stream_name(profile_id)
+        stream_name = stream_name(profile_id)
 
-      #   write.(something_happened, stream_name, expected_version: version)
-      # end
+        write.initial(initiated, stream_name)
+      end
     end
   end
 end
