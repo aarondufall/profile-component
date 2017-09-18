@@ -8,7 +8,6 @@ module ProfileComponent
         attribute :name, String
         attribute :email, String
         attribute :avatar_url, String
-        attribute :github_id, String
         attribute :time, String
       end 
     end

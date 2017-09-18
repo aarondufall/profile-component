@@ -1,7 +1,6 @@
 require 'eventide/postgres'
 
-require 'profile_component/messages/commands/initiate'
-require 'profile_component/messages/events/initiated'
+require 'profile_component/load'
 
 require 'profile_component/profile'
 require 'profile_component/projection'

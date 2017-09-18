@@ -8,7 +8,6 @@ module ProfileComponent
         profile.name = name
         profile.email = email
         profile.avatar_url = avatar_url
-        profile.github_id = github_id
         profile.initiated_time = Time::Effective::Raw.example
 
         profile
@@ -28,10 +27,6 @@ module ProfileComponent
 
       def self.avatar_url
         'http://some_domain.com/images/some_avatar.jpg'
-      end
-
-      def self.github_id
-        'some_github_id'
       end
 
       def self.id_increment

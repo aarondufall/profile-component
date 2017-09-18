@@ -6,7 +6,6 @@ module ProfileComponent
     attribute :name, String
     attribute :email, String
     attribute :avatar_url, String
-    attribute :github_id, String
     attribute :initiated_time, Time
     
     def initiated?
