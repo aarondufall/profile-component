@@ -9,7 +9,6 @@ module ProfileComponent
           initiate.name = Profile.name
           initiate.email = Profile.email
           initiate.avatar_url = Profile.avatar_url
-          initiate.github_id = Profile.github_id
           initiate.processed_time = Controls::Time::Processed.example
 
           initiate

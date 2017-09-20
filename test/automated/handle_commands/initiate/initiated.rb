@@ -15,7 +15,6 @@ context "Handle Commands" do
       name = initiate.name or fail
       email = initiate.email or fail
       avatar_url = initiate.avatar_url or fail
-      github_id = initiate.github_id or fail
       effective_time = initiate.time or fail 
 
       handler.(initiate)
@@ -57,10 +56,6 @@ context "Handle Commands" do
 
         test "avatar_url" do
           assert(initiated.avatar_url == avatar_url)
-        end
-
-        test "github_id" do
-          assert(initiated.github_id == github_id)
         end
 
         test "processed_time" do
