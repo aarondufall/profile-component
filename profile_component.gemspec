@@ -5,9 +5,10 @@ Gem::Specification.new do |s|
   s.summary = ' '
   s.description = ' '
 
-  s.authors = ['email@domain.com']
-  s.homepage = 'http://domain.com'
-  s.licenses = ['TODO']
+  s.authors = ['Aaron Dufall']
+  s.email = 'aald212@gmail.com'
+  s.homepage = 'https://github.com/aarondufall/profile-component'
+  s.licenses = ['MIT']
 
   s.require_paths = ['lib']
   s.files = Dir.glob('{lib}/**/*')
