@@ -1,4 +1,4 @@
-module Profile
+class Profile
   Client = ProfileComponent::Commands
 
   module Client
