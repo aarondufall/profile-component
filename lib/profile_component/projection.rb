@@ -5,16 +5,18 @@ module ProfileComponent
 
     entity_name :profile
 
-    # TODO Implement event projection blocks
-    # eg:
-    # apply SomethingHappened do |something_happened|
-    #   SetAttributes.(profile, something_happened, copy: [
-    #     { :profile_id => :id }
-    #   ])
+    apply Initiated do |initiated|
+      SetAttributes.(profile, initiated, copy: [
+        { :profile_id => :id },
+        :name,
+        :email,
+        :avatar_url
+      ])
 
-    #   something_happened_time = Clock.parse(something_happened.time)
+      initiated_time = Clock.parse(initiated.time)
 
-    #   profile.something_happened_time = something_happened_time
-    # end
+      profile.initiated_time = initiated_time
+    end
   end
 end
+
